@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>FORMA — Terms of Use</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@200..800&family=JetBrains+Mono:wght@300..600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy-0:#08131F;
+  --navy:#0D1B2A;
+  --navy-1:#13243A;
+  --navy-2:#19304A;
+  --steel:#415A77;
+  --steel-2:#5A7794;
+  --teal:#00B4D8;
+  --teal-dim:#0089A8;
+  --white:#E0E1DD;
+  --white-dim:#9BA0A0;
+  --amber:#E9C46A;
+
+  --serif:'Playfair Display', Georgia, serif;
+  --sans:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, monospace;
+  --display:'Archivo Black','Bebas Neue', Impact, sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--navy);color:var(--white);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{font-variant-numeric:tabular-nums; min-height:100vh}
+
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  pointer-events:none;
+  z-index:200;
+  opacity:.04;
+  mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+.brandbar{
+  position:fixed; top:0; left:0; right:0;
+  z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:22px 40px;
+  background:linear-gradient(180deg, var(--navy) 0%, rgba(13,27,42,.85) 70%, transparent 100%);
+  backdrop-filter:blur(8px);
+}
+.wordmark{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.4em;
+  text-transform:uppercase;
+  color:var(--white);
+  font-weight:500;
+  display:inline-flex; gap:10px; align-items:center;
+  text-decoration:none;
+}
+.wordmark .dot{
+  width:6px; height:6px; background:var(--teal); border-radius:1px;
+  box-shadow:0 0 12px var(--teal);
+}
+.serial{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--white-dim);
+}
+.back-link{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--white-dim);
+  text-decoration:none;
+  display:inline-flex; align-items:center; gap:10px;
+  transition:color .25s ease;
+}
+.back-link:hover{color:var(--teal)}
+.back-link .arrow{display:inline-block; transition:transform .25s ease}
+.back-link:hover .arrow{transform:translateX(-4px)}
+
+.eyebrow{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--teal);
+  font-weight:500;
+}
+.display{
+  font-family:var(--display);
+  font-weight:900;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  line-height:.92;
+  transform:scaleY(1.08);
+  transform-origin:left center;
+}
+
+.bg-page{
+  background:
+    radial-gradient(1200px 700px at 90% 0%, rgba(0,180,216,.06), transparent 60%),
+    linear-gradient(180deg, var(--navy) 0%, var(--navy-1) 60%, var(--navy-0) 100%);
+  min-height:100vh;
+}
+
+.hero{
+  padding:160px 80px 80px;
+  border-bottom:1px solid rgba(224,225,221,.08);
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:80px;
+  align-items:end;
+}
+.hero h1{
+  margin:0;
+  font-size:clamp(56px, 9vw, 132px);
+  letter-spacing:.02em;
+}
+.hero .eyebrow-row{
+  display:flex; gap:24px; align-items:center;
+  margin-bottom:32px;
+}
+.hero .divider{width:48px; height:1px; background:var(--steel)}
+
+.hero-meta{
+  display:flex; flex-direction:column; gap:18px;
+  padding-bottom:14px;
+}
+.hero-meta .row{
+  display:flex; justify-content:space-between;
+  padding:14px 0;
+  border-top:1px solid rgba(224,225,221,.1);
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+}
+.hero-meta .row:last-child{border-bottom:1px solid rgba(224,225,221,.1)}
+.hero-meta .row .label{color:var(--white-dim)}
+.hero-meta .row .value{color:var(--white)}
+.hero-meta .row .value .teal{color:var(--teal)}
+
+.layout{
+  display:grid;
+  grid-template-columns:240px 1fr;
+  gap:80px;
+  max-width:1280px;
+  margin:0 auto;
+  padding:80px 80px 120px;
+}
+
+.toc{
+  position:sticky;
+  top:120px;
+  align-self:start;
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.toc .toc-label{
+  color:var(--teal);
+  font-size:10px;
+  letter-spacing:.32em;
+  margin-bottom:20px;
+  padding-bottom:14px;
+  border-bottom:1px solid rgba(224,225,221,.12);
+}
+.toc ol{
+  list-style:none;
+  padding:0; margin:0;
+  display:flex; flex-direction:column;
+}
+.toc li a{
+  display:flex; gap:14px;
+  padding:10px 0;
+  color:var(--white-dim);
+  text-decoration:none;
+  transition:color .2s ease;
+  line-height:1.4;
+}
+.toc li a:hover{color:var(--teal)}
+.toc li a.active{color:var(--white)}
+.toc li a .num{
+  color:var(--steel-2);
+  flex:0 0 auto;
+  width:18px;
+}
+.toc li a:hover .num, .toc li a.active .num{color:var(--teal)}
+
+.content{
+  max-width:720px;
+}
+.content section{
+  padding-top:56px;
+  scroll-margin-top:100px;
+}
+.content section:first-child{padding-top:0}
+
+.section-num{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin-bottom:14px;
+}
+.content h2{
+  font-family:var(--display);
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.03em;
+  font-size:clamp(26px, 2.6vw, 36px);
+  line-height:1.05;
+  color:var(--white);
+  margin:0 0 32px;
+  transform:scaleY(1.06);
+  transform-origin:left;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(224,225,221,.1);
+}
+.content h3{
+  font-family:var(--serif);
+  font-weight:400;
+  font-style:italic;
+  font-size:18px;
+  color:var(--white);
+  margin:0 0 14px;
+  letter-spacing:.01em;
+}
+.clause{
+  display:grid;
+  grid-template-columns:60px 1fr;
+  gap:24px;
+  margin-bottom:28px;
+}
+.clause .ref{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.18em;
+  color:var(--teal);
+  font-weight:500;
+  padding-top:4px;
+}
+.clause p{
+  margin:0;
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:15px;
+  line-height:1.75;
+  color:var(--white);
+  text-wrap:pretty;
+}
+.clause.caps p{
+  font-family:var(--mono);
+  font-size:12px;
+  line-height:1.7;
+  letter-spacing:.04em;
+  color:var(--white-dim);
+}
+.clause.caps p strong{color:var(--white); font-weight:500}
+
+footer{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:32px 80px;
+  border-top:1px solid rgba(224,225,221,.08);
+  background:var(--navy-0);
+  font-family:var(--mono); font-size:11px;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:var(--white-dim);
+}
+footer .links{display:flex; gap:28px}
+footer .links a{color:var(--white-dim); text-decoration:none; transition:color .2s}
+footer .links a:hover{color:var(--teal)}
+footer .right{color:var(--white-dim)}
+
+@media (max-width: 1100px){
+  .hero{grid-template-columns:1fr; gap:40px; padding:140px 40px 60px}
+  .layout{grid-template-columns:1fr; gap:40px; padding:48px 40px 80px}
+  .toc{position:static}
+  .brandbar{padding:18px 24px}
+  footer{flex-direction:column; gap:14px; padding:24px; text-align:center}
+}
+@media (max-width:560px){
+  .hero{padding:130px 24px 48px}
+  .layout{padding:40px 24px 64px}
+  .clause{grid-template-columns:1fr; gap:8px}
+  .clause .ref{padding-top:0}
+}
+</style>
+</head>
+
+<body class="bg-page">
+
+<div class="brandbar">
+  <a href="index.html" class="wordmark"><span class="dot"></span> FORMA</a>
+  <a href="index.html" class="back-link"><span class="arrow">&larr;</span> Back to site</a>
+</div>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow-row">
+      <span class="eyebrow">Legal &middot; Document 001</span>
+      <span class="divider"></span>
+      <span class="serial">REV 2026.02</span>
+    </div>
+    <h1 class="display">Terms<br>of Use.</h1>
+  </div>
+
+  <div class="hero-meta">
+    <div class="row">
+      <span class="label">Effective</span>
+      <span class="value">February 15, 2026</span>
+    </div>
+    <div class="row">
+      <span class="label">Issuer</span>
+      <span class="value">BuenaLab, Inc.</span>
+    </div>
+    <div class="row">
+      <span class="label">Jurisdiction</span>
+      <span class="value">California &middot; <span class="teal">USA</span></span>
+    </div>
+    <div class="row">
+      <span class="label">Status</span>
+      <span class="value"><span class="teal">&#9679;</span> Current</span>
+    </div>
+  </div>
+</section>
+
+<div class="layout">
+
+  <aside class="toc">
+    <div class="toc-label">Contents</div>
+    <ol>
+      <li><a href="#s1"><span class="num">01</span>Acceptance</a></li>
+      <li><a href="#s2"><span class="num">02</span>Use of the Web Site</a></li>
+      <li><a href="#s3"><span class="num">03</span>Limitation of Liability</a></li>
+      <li><a href="#s4"><span class="num">04</span>Indemnification</a></li>
+      <li><a href="#s5"><span class="num">05</span>Termination</a></li>
+      <li><a href="#s6"><span class="num">06</span>Applicable Laws</a></li>
+      <li><a href="#s7"><span class="num">07</span>Government Rights</a></li>
+      <li><a href="#s8"><span class="num">08</span>Miscellaneous</a></li>
+    </ol>
+  </aside>
+
+  <div class="content">
+
+    <section id="s1">
+      <div class="section-num">Section 01</div>
+      <h2>Acceptance of the<br>Terms and Conditions.</h2>
+
+      <div class="clause">
+        <div class="ref">1.1</div>
+        <p>BuenaLab, inc. (herein referred to as &ldquo;BuenaLab&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo; or &ldquo;our&rdquo;) provides and makes available this web site (the &ldquo;Web Site&rdquo;). All use of the Web Site is subject to the terms and conditions contained in this Terms of Use Agreement (the &ldquo;Agreement&rdquo;). Please read this Agreement carefully. By accessing, browsing or otherwise using the Web Site, you acknowledge that you have read, understood, and agree to be bound by this Agreement. If you do not accept the terms and conditions of this Agreement, you shall not access, browse or use the Web Site.</p>
+      </div>
+
+      <div class="clause">
+        <div class="ref">1.2</div>
+        <p>You understand and agree that we may change this Agreement at any time without prior notice. You may read a current, effective copy of this Agreement at any time by selecting the &ldquo;Terms of Use&rdquo; link on the Web Site. The revised terms and conditions will become effective at the time of posting. Any use of the Web Site after such date shall constitute your acceptance of such revised terms and conditions. If any change to this Agreement is not acceptable to you, your sole remedy is to cease accessing, browsing and otherwise using the Web Site.</p>
+      </div>
+
+      <div class="clause">
+        <div class="ref">1.3</div>
+        <p>Your access to and use of the Web Site is also subject to BuenaLab&rsquo;s Privacy Policy.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <div class="section-num">Section 02</div>
+      <h2>Use of the Web Site.</h2>
+
+      <div class="clause">
+        <div class="ref">2.1</div>
+        <p>This Web Site contains material, including but not limited to software, text, graphics and images (collectively referred to as the &ldquo;Content&rdquo;). We may own the Content or portions of the Content may be made available to us through arrangements that we have with third-parties. The Content is protected by United States and foreign intellectual property laws. Unauthorized use of the Content may result in violation of copyright, trademark, and other laws. You have no rights in or to the Content, and you will not use, copy or display the Content except as permitted under this Agreement. No other use is permitted without our prior written consent. You must retain all copyright and other proprietary notices contained in the original Content on any copy you make of the Content. You may not sell, transfer, assign, license, sublicense, or modify the Content or reproduce, display, publicly perform, make a derivative version of, distribute, or otherwise use the Content in any way for any public or commercial purpose. The use or posting of any of the Content on any other web site or in a networked computer environment for any purpose is expressly prohibited. If you violate any part of this Agreement, your right to access and/or use the Content and Web Site shall automatically terminate and you shall immediately destroy any copies you have made of the Content.</p>
+      </div>
+
+      <div class="clause">
+        <div class="ref">2.2</div>
+        <p>The trademarks, service marks, and logos of BuenaLab (the &ldquo;BuenaLab Trademarks&rdquo;) used and displayed on this Web Site are registered and unregistered trademarks or service marks of BuenaLab. Other company, product, and service names located on the Web Site may be trademarks or service marks owned by third-parties (the &ldquo;Third-Party Trademarks&rdquo;, and, collectively with the BuenaLab Trademarks, the &ldquo;Trademarks&rdquo;). Nothing on this Web Site or in this Agreement should be construed as granting, by implication, estoppel, or otherwise, any license or right to use any Trademark displayed on this Web Site without the prior written consent of BuenaLab specific for each such use. The Trademarks may not be used to disparage BuenaLab or the applicable third-party, BuenaLab&rsquo;s or third-party&rsquo;s products or services, or in any manner (using commercially reasonable judgment) that may damage any goodwill in the Trademarks. Use of any Trademarks as part of a link to or from any web site is prohibited without BuenaLab&rsquo;s prior written consent. All goodwill generated from the use of any BuenaLab Trademark shall inure to BuenaLab&rsquo;s benefit.</p>
+      </div>
+
+      <div class="clause">
+        <div class="ref">2.3</div>
+        <p>You agree not to: (a) take any action that imposes an unreasonable load on the Web Site&rsquo;s infrastructure, (b) use any device, software or routine to interfere or attempt to interfere with the proper working of the Web Site or any activity being conducted on the Web Site, (c) attempt to decipher, decompile, disassemble or reverse engineer any of the software comprising or making up the Web Site, (d) delete or alter any material posted on the Web Site by BuenaLab or any other person or entity, or (e) frame or link to any of the materials or information available on the Web Site.</p>
+      </div>
+
+      <div class="clause">
+        <div class="ref">2.4</div>
+        <p>The Web Site may contain links to third-party web sites (&ldquo;External Sites&rdquo;). These links are provided solely as a convenience to you and not as an endorsement by us of the content on such External Sites. The content of such External Sites is developed and provided by others. You should contact the site administrator or Webmaster for those External Sites if you have any concerns regarding such links or any content located on such External Sites. We are not responsible for the content of any linked External Sites and do not make any representations regarding the content or accuracy of any materials on such External Sites. You should take precautions when downloading files from all web sites to protect your computer from viruses and other destructive programs. If you decide to access any External Sites, you do so at your own risk.</p>
+      </div>
+
+      <div class="clause">
+        <div class="ref">2.5</div>
+        <p>Certain elements of the Web Site are protected by trade dress, trademark, unfair competition, and other state and federal laws and may not be copied or imitated in whole or in part, by any means, including but not limited to, the use of framing or mirrors, except as otherwise expressly permitted by Section 2.1 of this Agreement. None of the Content for this Web Site may be retransmitted without the express written consent from BuenaLab for each and every instance.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <div class="section-num">Section 03</div>
+      <h2>Limitation of Liability<br>&amp; Disclaimer of Warranties.</h2>
+
+      <div class="clause caps">
+        <div class="ref">3.1</div>
+        <p>BUENALAB, ITS AFFILIATES, AND ITS AND THEIR RESPECTIVE OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, SUPPLIERS, OR LICENSORS (COLLECTIVELY, THE <strong>&ldquo;BUENALAB PARTIES&rdquo;</strong>) MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE CONTENT, INCLUDING BUT NOT LIMITED TO ITS ACCURACY, RELIABILITY, COMPLETENESS, TIMELINESS OR RELIABILITY. THE BUENALAB PARTIES SHALL NOT BE SUBJECT TO LIABILITY FOR THE TRUTH, ACCURACY OR COMPLETENESS OF THE CONTENT OR ANY OTHER INFORMATION CONVEYED TO THE USER OR FOR ERRORS, MISTAKES OR OMISSIONS THEREIN OR FOR ANY DELAYS OR INTERRUPTIONS OF THE DATA OR INFORMATION STREAM FROM WHATEVER CAUSE. YOU AGREE THAT YOU USE THE WEB SITE AND THE CONTENT AT YOUR OWN RISK.</p>
+      </div>
+
+      <div class="clause caps">
+        <div class="ref">3.2</div>
+        <p>THE BUENALAB PARTIES DO NOT WARRANT THAT THE WEB SITE WILL OPERATE ERROR-FREE OR THAT THE WEB SITE, ITS SERVER, OR THE CONTENT ARE FREE OF COMPUTER VIRUSES OR SIMILAR CONTAMINATION OR DESTRUCTIVE FEATURES. IF YOUR USE OF THE WEB SITE OR THE CONTENT RESULTS IN THE NEED FOR SERVICING OR REPLACING EQUIPMENT OR DATA, NO BUENALAB PARTY SHALL BE RESPONSIBLE FOR THOSE COSTS.</p>
+      </div>
+
+      <div class="clause caps">
+        <div class="ref">3.3</div>
+        <p>THE WEB SITE AND CONTENT ARE PROVIDED ON AN <strong>&ldquo;AS IS&rdquo;</strong> AND <strong>&ldquo;AS AVAILABLE&rdquo;</strong> BASIS WITHOUT ANY WARRANTIES OF ANY KIND. THE BUENALAB PARTIES DISCLAIM ALL WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES OF TITLE, MERCHANTABILITY, NON-INFRINGEMENT OF THIRD PARTIES RIGHTS, AND FITNESS FOR PARTICULAR PURPOSE.</p>
+      </div>
+
+      <div class="clause caps">
+        <div class="ref">3.4</div>
+        <p>IN NO EVENT SHALL ANY BUENALAB PARTY BE LIABLE FOR ANY DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, INCIDENTAL AND CONSEQUENTIAL DAMAGES, LOST PROFITS, OR DAMAGES RESULTING FROM LOST DATA OR BUSINESS INTERRUPTION) RESULTING FROM THE USE OR INABILITY TO USE THE WEB SITE AND THE CONTENT, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), OR ANY OTHER LEGAL THEORY, EVEN IF SUCH BUENALAB PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+      </div>
+
+      <div class="clause caps">
+        <div class="ref">3.5</div>
+        <p>SOME STATES DO NOT ALLOW THE DISCLAIMER OR EXCLUSION OF CERTAIN WARRANTIES OR THE LIMITATION OR EXCLUSION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES. ACCORDINGLY, IN SUCH STATES, SOME OF THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU OR BE ENFORCEABLE WITH RESPECT TO YOU, AND THE LIABILITY OF THE BUENALAB PARTIES SHALL BE LIMITED TO THE GREATEST EXTENT PERMITTED BY LAW.</p>
+      </div>
+
+      <div class="clause caps">
+        <div class="ref">3.6</div>
+        <p>IF YOU ARE FROM NEW JERSEY, THE FOREGOING SECTIONS 3.1 THROUGH 3.4 AND SECTION 4 BELOW ARE INTENDED TO BE ONLY AS BROAD AS IS PERMITTED UNDER THE LAWS OF THE STATE OF NEW JERSEY. IF ANY PORTION OF THESE SECTIONS IS HELD TO BE INVALID UNDER THE LAWS OF THE STATE OF NEW JERSEY, THE INVALIDITY OF SUCH PORTION SHALL NOT AFFECT THE VALIDITY OF THE REMAINING PORTIONS OF THE APPLICABLE SECTIONS.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <div class="section-num">Section 04</div>
+      <h2>Indemnification.</h2>
+      <div class="clause">
+        <div class="ref">4.0</div>
+        <p>To the extent permitted under applicable law, you agree to defend, indemnify, and hold harmless the BuenaLab Parties from and against any claims, actions, demands, losses, and expenses, including, without limitation, reasonable legal and accounting fees, arising or resulting from your breach of this Agreement or your access to, use or misuse of the Content or Web Site. BuenaLab shall provide notice to you of any such claim, suit, or proceeding. BuenaLab reserves the right to assume the exclusive defense and control of any matter which is subject to indemnification under this section. In such case, you agree to cooperate with any reasonable requests assisting BuenaLab&rsquo;s defense of such matter. You may not settle or compromise any claim against the BuenaLab Parties without BuenaLab&rsquo;s written consent.</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <div class="section-num">Section 05</div>
+      <h2>Termination of<br>this Agreement.</h2>
+
+      <div class="clause">
+        <div class="ref">5.1</div>
+        <p>BuenaLab reserves the right, in its sole discretion, to restrict, suspend, or terminate this Agreement and your access to all or any part of the Web Site or the Content at any time and for any reason without prior notice or liability. BuenaLab reserves the right to change, suspend, or discontinue all or any part of the Web Site or the Content at any time without prior notice or liability.</p>
+      </div>
+
+      <div class="clause">
+        <div class="ref">5.2</div>
+        <p>Sections 2 (Use of the Web Site), 3 (Limitation of Liability and Disclaimer of Warranties), 4 (Indemnification), 5 (Termination of Agreement), and 8 (Miscellaneous) shall survive the termination of this Agreement.</p>
+      </div>
+    </section>
+
+    <section id="s6">
+      <div class="section-num">Section 06</div>
+      <h2>User Must Comply<br>with Applicable Laws.</h2>
+
+      <div class="clause">
+        <div class="ref">6.1</div>
+        <p>This Web Site is directed to users in the United States. We make no claims concerning whether the Content may be downloaded, viewed, or be appropriate for use outside of the United States. If you access the Web Site or the Content from outside of the United States, you do so at your own risk. Whether inside or outside of the United States, you are solely responsible for ensuring compliance with the laws of your specific jurisdiction.</p>
+      </div>
+
+      <div class="clause">
+        <div class="ref">6.2</div>
+        <p>The United States controls the export of products and information. You expressly agree to comply with such restrictions and not to export or re-export any of the Content to countries or persons prohibited under the export control laws. By downloading the Content, you are expressly agreeing that you are not in a country where such export is prohibited or are a person or entity for which such export is prohibited. You are solely responsible for compliance with the laws of your specific jurisdiction regarding the import, export, or re-export of the Content.</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <div class="section-num">Section 07</div>
+      <h2>U.S. Government<br>Restricted Rights.</h2>
+      <div class="clause">
+        <div class="ref">7.0</div>
+        <p>The Content is provided with &ldquo;RESTRICTED RIGHTS.&rdquo; Use, duplication, or disclosure by the Government is subject to the restrictions contained in 48 CFR 52.227-19 and 48 CFR 252.227-7013 et seq. or its successor. Use of the Web Site or Content by the Government constitutes acknowledgement of our proprietary rights in the Web Site and Content.</p>
+      </div>
+    </section>
+
+    <section id="s8">
+      <div class="section-num">Section 08</div>
+      <h2>Miscellaneous.</h2>
+      <div class="clause">
+        <div class="ref">8.0</div>
+        <p>This Agreement is governed by the internal substantive laws of the State of California, without respect to its conflict of laws provisions. You expressly agree to submit to the exclusive personal jurisdiction of the state and federal courts sitting in the City of San Francisco in the State of California. If any provision of this Agreement is found to be invalid by any court having competent jurisdiction, the invalidity of such provision shall not affect the validity of the remaining provisions of this Agreement, which shall remain in full force and effect. Failure of BuenaLab to act on or enforce any provision of this Agreement shall not be construed as a waiver of that provision or any other provision in this Agreement. No waiver shall be effective against BuenaLab unless made in writing, and no such waiver shall be construed as a waiver in any other or subsequent instance. Except as expressly agreed by BuenaLab and you, this Agreement constitutes the entire Agreement between you and BuenaLab with respect to the subject matter, and supercedes all previous or contemporaneous agreements, whether written or oral, between the parties with respect to the subject matter. The section headings are provided merely for convenience and shall not be given any legal import. This Agreement will inure to the benefit of our successors, assigns, licensees, and sublicensees.</p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<footer>
+  <div class="links">
+    <a href="index.html">FORMA</a>
+    <a href="terms.html">Terms</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+  <div class="right">&copy; 2026 BuenaLab, Inc.</div>
+</footer>
+
+<script>
+const tocLinks = document.querySelectorAll('.toc a');
+const sections = document.querySelectorAll('.content section');
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const id = e.target.id;
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+
+sections.forEach(s => io.observe(s));
+</script>
+
+</body>
+</html>

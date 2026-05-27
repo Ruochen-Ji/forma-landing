@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Privacy Notice — FORMA by Buena Lab</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@200..800&family=JetBrains+Mono:wght@300..600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy-0:#08131F;
+  --navy:#0D1B2A;
+  --navy-1:#13243A;
+  --navy-2:#19304A;
+  --steel:#415A77;
+  --steel-2:#5A7794;
+  --teal:#00B4D8;
+  --teal-dim:#0089A8;
+  --white:#E0E1DD;
+  --white-dim:#9BA0A0;
+
+  --serif:'Playfair Display', Georgia, serif;
+  --sans:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, monospace;
+  --display:'Archivo Black', Impact, sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--navy);color:var(--white);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{
+  font-variant-numeric:tabular-nums;
+  background:
+    radial-gradient(1100px 700px at 85% -8%, rgba(0,180,216,.08), transparent 60%),
+    radial-gradient(900px 600px at -5% 100%, rgba(0,180,216,.04), transparent 60%),
+    linear-gradient(180deg, var(--navy) 0%, var(--navy-1) 100%);
+  min-height:100vh;
+}
+
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  pointer-events:none;
+  z-index:200;
+  opacity:.04;
+  mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+.topbar{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:22px 40px;
+  background:linear-gradient(180deg, var(--navy) 65%, rgba(13,27,42,0));
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(224,225,221,.04);
+}
+.back{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--white-dim);
+  text-decoration:none;
+  display:inline-flex; align-items:center; gap:12px;
+  transition:color .2s ease;
+}
+.back:hover{color:var(--teal)}
+.back .arrow{display:inline-block; transition:transform .25s ease}
+.back:hover .arrow{transform:translateX(-4px)}
+.serial{
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--white-dim);
+}
+
+.page{
+  max-width:1080px;
+  margin:0 auto;
+  padding:80px 80px 160px;
+}
+
+.doc-header{
+  border-bottom:1px solid rgba(224,225,221,.12);
+  padding-bottom:56px;
+  margin-bottom:64px;
+}
+.editorial{
+  font-family:var(--serif);
+  font-style:italic;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--teal);
+  font-size:13px;
+}
+.eyebrow{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--teal);
+  font-weight:500;
+}
+.title-row{display:flex; gap:24px; align-items:center; margin-bottom:32px; flex-wrap:wrap}
+.title-row .divider{width:48px; height:1px; background:var(--steel)}
+
+h1{
+  font-family:var(--display);
+  font-weight:900;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  line-height:.9;
+  transform:scaleY(1.08);
+  transform-origin:left center;
+  font-size:clamp(64px, 10vw, 144px);
+  margin:0 0 32px;
+}
+h1 .stack{display:block}
+.lede{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(20px, 2vw, 26px);
+  line-height:1.45;
+  color:var(--white);
+  max-width:60ch;
+  margin:0;
+}
+.meta-row{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,auto));
+  gap:64px;
+  margin-top:48px;
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+.meta-row dt{color:var(--white-dim); margin-bottom:10px}
+.meta-row dd{color:var(--white); margin:0; font-weight:500}
+
+.section{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:80px;
+  padding:56px 0;
+  border-top:1px solid rgba(224,225,221,.08);
+}
+.section:first-of-type{border-top:none; padding-top:0}
+.section h2{
+  position:sticky;
+  top:120px;
+  align-self:start;
+  margin:0;
+}
+.section h2 .num{
+  display:block;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:36px;
+  letter-spacing:0;
+  text-transform:none;
+  color:var(--white);
+  font-weight:400;
+  margin-bottom:10px;
+  line-height:1;
+}
+.section h2 .label{
+  display:block;
+  font-family:var(--mono);
+  font-weight:500;
+  font-size:11px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--teal);
+  line-height:1.4;
+}
+
+.content{
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:16px;
+  line-height:1.75;
+  color:var(--white-dim);
+  max-width:62ch;
+}
+.content p{margin:0 0 18px}
+.content p:last-child{margin-bottom:0}
+.content strong{color:var(--white); font-weight:500}
+.content em{color:var(--white); font-style:normal; border-bottom:1px dotted rgba(0,180,216,.35); padding-bottom:1px}
+.content a{
+  color:var(--teal);
+  text-decoration:none;
+  border-bottom:1px solid rgba(0,180,216,.3);
+  transition:border-color .2s ease, color .2s ease;
+}
+.content a:hover{border-color:var(--teal); color:var(--white)}
+.content ul{
+  list-style:none;
+  padding:0;
+  margin:0 0 22px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.content ul li{
+  position:relative;
+  padding-left:24px;
+  color:var(--white);
+  font-weight:300;
+}
+.content ul li::before{
+  content:"";
+  position:absolute;
+  left:0; top:.75em;
+  width:12px; height:1px;
+  background:var(--steel-2);
+}
+.content ul li .lead{color:var(--white); font-weight:500}
+.content ul li span.note{color:var(--white-dim)}
+
+.contact-card{
+  margin-top:96px;
+  padding:40px 48px;
+  border:1px solid rgba(224,225,221,.12);
+  background:rgba(19,36,58,.4);
+  display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap;
+  gap:24px;
+}
+.contact-card .label{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--white-dim);
+  margin-bottom:8px;
+}
+.contact-card .addr{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:28px;
+  color:var(--white);
+}
+.contact-card .addr a{color:var(--teal); text-decoration:none; border-bottom:1px solid rgba(0,180,216,.35)}
+.contact-card .addr a:hover{color:var(--white); border-color:var(--white)}
+
+.foot{
+  margin-top:80px;
+  padding-top:40px;
+  border-top:1px solid rgba(224,225,221,.12);
+  display:flex; justify-content:space-between; align-items:center;
+  gap:24px; flex-wrap:wrap;
+}
+.foot .col{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--white-dim);
+}
+.foot .links{display:flex; gap:28px}
+.foot .links a{
+  color:var(--white-dim);
+  text-decoration:none;
+  transition:color .2s ease;
+}
+.foot .links a:hover{color:var(--teal)}
+
+@media (max-width:880px){
+  .page{padding:40px 28px 100px}
+  .section{grid-template-columns:1fr; gap:24px; padding:40px 0}
+  .section h2{position:static}
+  .meta-row{grid-template-columns:1fr; gap:20px}
+  .topbar{padding:18px 24px}
+  .contact-card{padding:28px}
+  .contact-card .addr{font-size:22px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <a class="back" href="index.html"><span class="arrow">&larr;</span> Back to FORMA</a>
+  <span class="serial">DOC &middot; BL&mdash;PRIV / 2026</span>
+</div>
+
+<div class="page">
+
+  <header class="doc-header">
+    <div class="title-row">
+      <span class="editorial">Legal</span>
+      <span class="divider"></span>
+      <span class="eyebrow">Doc 02 / Privacy Notice</span>
+    </div>
+    <h1><span class="stack">Privacy</span><span class="stack">Notice.</span></h1>
+    <p class="lede">BuenaLab, Inc. values your privacy. This notice explains what we collect when you visit our site, how we use it, and the choices you have. We do not run ads, and we do not track you across the web.</p>
+    <dl class="meta-row">
+      <div>
+        <dt>Effective</dt>
+        <dd>February 15, 2026</dd>
+      </div>
+      <div>
+        <dt>Entity</dt>
+        <dd>BuenaLab, Inc.</dd>
+      </div>
+      <div>
+        <dt>Contact</dt>
+        <dd>orion@buenalab.com</dd>
+      </div>
+    </dl>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <h2><span class="num">01</span><span class="label">Overview</span></h2>
+      <div class="content">
+        <p>BuenaLab, Inc. (&ldquo;BuenaLab,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) values your privacy. This Privacy Notice explains what information we collect when you visit our website (the &ldquo;Site&rdquo;), how we use it, and the choices you have.</p>
+        <p>This Site is primarily informational: <strong>we do not run advertising and we do not use analytics or tracking pixels on the Site.</strong></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">02</span><span class="label">No Analytics or Ad Tracking</span></h2>
+      <div class="content">
+        <p>We do not use analytics services, advertising pixels, or tracking cookies on this Site for the purpose of tracking you across websites or building advertising profiles. <strong>We do not sell your personal information,</strong> and we do not share it for cross-context behavioral advertising.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">03</span><span class="label">Information We Collect Automatically</span></h2>
+      <div class="content">
+        <p>Like most websites, our hosting provider and related infrastructure may automatically process basic request logs when you access the Site. These logs may include:</p>
+        <ul>
+          <li>IP address</li>
+          <li>User-agent / device and browser information</li>
+          <li>Timestamps</li>
+          <li>Pages requested and referring page (referrer header)</li>
+          <li>Approximate location inferred from IP address (e.g., city/region)</li>
+          <li>Error and performance information (e.g., response codes, latency) for reliability and security</li>
+        </ul>
+        <p>We use these logs to operate the Site, maintain reliability, prevent abuse, and secure our systems. <strong>We do not use these logs to build profiles about you.</strong></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">04</span><span class="label">Cookies &amp; Similar Technologies</span></h2>
+      <div class="content">
+        <p>This Site does not use tracking cookies. Depending on how the Site is hosted, strictly necessary cookies may be used for essential functionality (for example, security features such as load balancing or bot protection). If we introduce any non-essential cookies in the future, we will update this notice accordingly.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">05</span><span class="label">Third-Party Resources</span></h2>
+      <div class="content">
+        <p>This Site loads fonts from <strong>Google Fonts</strong>. When your browser fetches these font files, Google may receive standard request data such as your IP address, user-agent, and the page from which the request was made. This exchange is a typical part of how content delivery works on the web. You can learn more by reviewing Google&rsquo;s privacy materials.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">06</span><span class="label">External Links</span></h2>
+      <div class="content">
+        <p>Links on this Site may take you to third-party websites (including our jobs page hosted by Ashby and our social media). This Privacy Notice does not apply to those third-party sites. Their privacy practices govern your use of those sites, and we encourage you to review their policies.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">07</span><span class="label">Job Applications</span></h2>
+      <div class="content">
+        <p>If you apply for a role via our jobs page (hosted by Ashby), the information you submit is processed for recruiting and hiring purposes. That information is collected and processed by Ashby and by us in accordance with their terms and privacy practices and any notices provided during the application flow. We may use applicant information to evaluate candidates, communicate about the process, and comply with legal obligations.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">08</span><span class="label">How We Use Information</span></h2>
+      <div class="content">
+        <p>We use information collected through the Site for the following purposes:</p>
+        <ul>
+          <li>Provide and operate the Site</li>
+          <li>Maintain security, prevent fraud, and protect our users and infrastructure</li>
+          <li>Debug and improve performance and reliability</li>
+          <li>Respond to inquiries you send to us</li>
+          <li>Comply with applicable laws and enforce our agreements</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">09</span><span class="label">How We Share Information</span></h2>
+      <div class="content">
+        <p>We may share information in the following limited circumstances:</p>
+        <ul>
+          <li><strong>Service providers:</strong> vendors who help host, secure, and operate the Site may process basic logs and technical data on our behalf.</li>
+          <li><strong>Compliance and protection:</strong> if we believe disclosure is required by law, or necessary to protect rights, safety, and security.</li>
+          <li><strong>Business transfers:</strong> if we are involved in a merger, acquisition, financing, or sale of assets, information may be transferred as part of that transaction.</li>
+        </ul>
+        <p><strong>We do not share personal information with third parties for targeted advertising.</strong></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">10</span><span class="label">Data Retention</span></h2>
+      <div class="content">
+        <p>We retain basic server logs only as long as reasonably necessary for security, reliability, and operational purposes, and then delete or de-identify them. Retention periods may vary depending on the nature of the logs and any legal or security requirements. Recruiting information is retained according to our recruiting practices and as required by applicable law.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">11</span><span class="label">International Visitors</span></h2>
+      <div class="content">
+        <p>We are based in the United States, and the Site is operated from the United States. If you access the Site from outside the U.S., information may be processed in the U.S. and other locations where our service providers operate. These locations may have data protection laws different from those in your jurisdiction.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">12</span><span class="label">Your Choices &amp; Rights</span></h2>
+      <div class="content">
+        <p>Depending on where you live, you may have rights regarding your personal information, such as requesting access, correction, deletion, or information about our processing. To submit a request, email us at <a href="mailto:orion@buenalab.com">orion@buenalab.com</a>. We may need to verify your request before fulfilling it. Please note that we may retain certain information as required by law or for legitimate business purposes (for example, security and recordkeeping).</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">13</span><span class="label">Security</span></h2>
+      <div class="content">
+        <p>We take reasonable administrative, technical, and organizational measures to help protect information processed through the Site. No method of transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">14</span><span class="label">Children&rsquo;s Privacy</span></h2>
+      <div class="content">
+        <p>This Site is not intended for children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child has provided us personal information, please contact us at <a href="mailto:orion@buenalab.com">orion@buenalab.com</a>.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="num">15</span><span class="label">Changes to This Notice</span></h2>
+      <div class="content">
+        <p>We may update this Privacy Notice from time to time. If we make changes, we will update the &ldquo;Effective&rdquo; date above. Your continued use of the Site after an update means you have read and understood the updated notice.</p>
+      </div>
+    </section>
+
+    <div class="contact-card">
+      <div>
+        <div class="label">Questions? Contact</div>
+        <div class="addr"><a href="mailto:orion@buenalab.com">orion@buenalab.com</a></div>
+      </div>
+      <div>
+        <div class="label">BuenaLab, Inc.</div>
+        <div class="addr" style="font-size:14px; font-family:var(--mono); letter-spacing:.2em; text-transform:uppercase; color:var(--white-dim); font-style:normal">United States</div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="foot">
+    <div class="col">&copy; BuenaLab, Inc. &middot; 2026</div>
+    <div class="links">
+      <a href="index.html">FORMA</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
