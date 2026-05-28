@@ -1,14 +1,10 @@
-import 'dotenv/config';
-import express from 'express';
 import { Resend } from 'resend';
 
-const app = express();
-const port = process.env.PORT || 3000;
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed.' });
+  }
 
-app.use(express.json());
-app.use(express.static('.'));
-
-app.post('/api/waitlist', async (req, res) => {
   const { email } = req.body;
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ error: 'Valid email required.' });
@@ -30,7 +26,7 @@ app.post('/api/waitlist', async (req, res) => {
     await resend.emails.send({
       from: process.env.RESEND_FROM || 'FORMA <onboarding@resend.dev>',
       to: email,
-      subject: 'You\'re on the FORMA waitlist',
+      subject: "You're on the FORMA waitlist",
       html: `
         <div style="font-family:Inter,Helvetica,Arial,sans-serif;max-width:480px;margin:0 auto;padding:40px 24px;color:#E0E1DD;background:#0D1B2A;">
           <h1 style="font-family:Georgia,serif;font-size:28px;font-weight:700;margin:0 0 16px;color:#E0E1DD;">You're in.</h1>
@@ -49,8 +45,4 @@ app.post('/api/waitlist', async (req, res) => {
     console.error('Resend error:', err);
     res.status(500).json({ error: 'Failed to join waitlist.' });
   }
-});
-
-app.listen(port, () => {
-  console.log(`FORMA server running on http://localhost:${port}`);
-});
+}
